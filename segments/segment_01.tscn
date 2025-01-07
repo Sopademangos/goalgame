@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://du4vgil73dtt1"]
+
+[ext_resource type="PackedScene" uid="uid://bi6fqtocg5eok" path="res://goal/goal.tscn" id="1_sityl"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fhfw2"]
+size = Vector2(10, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qdsx8"]
+
+[node name="Segment01" type="Node3D"]
+
+[node name="floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_fhfw2")
+
+[node name="EntryPoint" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.25957, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EntryPoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.412074, 0)
+shape = SubResource("BoxShape3D_qdsx8")
+
+[node name="ExitPoint" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.30585, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExitPoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.412074, 0)
+shape = SubResource("BoxShape3D_qdsx8")
+
+[node name="Goal" parent="." instance=ExtResource("1_sityl")]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 0, 3, -2)
+
+[node name="Goal2" parent="." instance=ExtResource("1_sityl")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 0, 3, 2)
