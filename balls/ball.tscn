@@ -4,7 +4,7 @@
 
 [sub_resource type="SphereMesh" id="SphereMesh_rc5h5"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_j2glb"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_b8mk5"]
 
 [node name="Ball" type="RigidBody3D"]
 script = ExtResource("1_opowr")
@@ -12,7 +12,5 @@ script = ExtResource("1_opowr")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_rc5h5")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("SphereShape3D_j2glb")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_b8mk5")
